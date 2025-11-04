@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Ridex</title>
+
+  <meta name="description" content="Ridex - Affordable and reliable car rental services across India. Book cars online for city rides or long trips.">
+  <meta name="keywords" content="car rental, book car online, car hire India, Ridex, vehicle booking, travel car service">
+  <meta name="author" content="Ridex Car Rentals">
+
+  <link rel="canonical" href="https://yourdomainname.com/contact.html">
+  <link rel="icon" type="image/png" href="img/jeep.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-34WQGNWX01"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-34WQGNWX01');
+  </script>
+
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-section">
+    <a href="index.html" class="logo"><img src="img/jeep.png" alt="Ridex Logo"></a>
+    <p class="tagline">Ride Smarter. Drive Greener.</p>
+  </div>
+
+  <div class="bx bx-menu" id="menu-icon"></div>
+
+  <ul class="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+  </ul>
+
+  <div class="header-btn">
+    <a href="#" class="sign-up">Sign Up</a>
+    <a href="#" class="sign-in">Sign In</a>
+  </div>
+</header>
+
+
+  <section class="contact" id="contact">
+    <div class="heading">
+      <span>Contact Us</span>
+      <h1>We’d Love to Hear from You</h1>
+      <p>Questions, feedback, or collaborations? Reach out to us anytime — we’re here to help!</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-details">
+        <h2>Get in Touch</h2>
+        <div class="info-item"><i class='bx bxs-map'></i> 123 MG Road, Mumbai, India</div>
+        <div class="info-item"><i class='bx bxs-phone'></i> +91 98765 43210</div>
+        <div class="info-item"><i class='bx bxs-envelope'></i> support@ridex.com</div>
+
+        <h3>Connect with Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" class="facebook"><i class='bx bxl-facebook'></i></a>
+          <a href="https://twitter.com" target="_blank" class="twitter"><i class='bx bxl-twitter'></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="instagram"><i class='bx bxl-instagram'></i></a>
+        </div>
+
+        <p class="small-text">Follow us for updates, exclusive offers, and rental tips.</p>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="6" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="coypright">
+      <p>&#169; Ridex All Right Reserved</p>
+      <div class="social">
+        <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you for contacting us! We’ll get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+
+</html>
