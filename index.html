@@ -29,6 +29,71 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 
+<div id="chatbot-container">
+    <div id="chat-icon">💬</div>
+
+    <div id="chatbot">
+        <div id="chat-header">
+            <span>Ridex Assistant</span>
+            <button id="close-chat">×</button>
+        </div>
+        <div id="chat-body">
+            <div id="chat-messages"></div>
+            <input type="text" id="chat-input" placeholder="Type your message..." />
+        </div>
+    </div>
+</div>
+
+<script>
+    const chatIcon = document.getElementById("chat-icon");
+    const chatbot = document.getElementById("chatbot");
+    const closeChat = document.getElementById("close-chat");
+    const chatInput = document.getElementById("chat-input");
+    const chatMessages = document.getElementById("chat-messages");
+
+    chatIcon.addEventListener("click", () => {
+        chatbot.style.display = "flex";
+        chatIcon.style.display = "none";
+    });
+
+    closeChat.addEventListener("click", () => {
+        chatbot.style.display = "none";
+        chatIcon.style.display = "flex";
+    });
+
+    const botReply = (message) => {
+        let reply = "";
+        message = message.toLowerCase();
+        if (message.includes("hi") || message.includes("hello"))
+            reply = "Hi there! 👋 How can I assist you with your car rental today?";
+        else if (message.includes("car") || message.includes("available"))
+            reply = "We have several options available — hatchbacks, sedans, and SUVs. 🚗 Check the Services section!";
+        else if (message.includes("price") || message.includes("rate"))
+            reply = "Our rental rates start from ₹1,700/day, depending on the model.";
+        else if (message.includes("contact"))
+            reply = "You can reach us at 📞 +91 98765 43210 or visit our Contact page.";
+        else
+            reply = "Thank you for reaching out! Our team will get back to you soon.";
+
+        const botMsg = document.createElement("div");
+        botMsg.className = "bot-message";
+        botMsg.textContent = reply;
+        chatMessages.appendChild(botMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" && chatInput.value.trim() !== "") {
+            const userMsg = document.createElement("div");
+            userMsg.className = "user-message";
+            userMsg.textContent = chatInput.value;
+            chatMessages.appendChild(userMsg);
+            botReply(chatInput.value);
+            chatInput.value = "";
+        }
+    });
+</script>
+
 <body>
     <header>
         <div class="logo-section">
@@ -306,8 +371,8 @@
         <div class="footer-content">
             <div class="footer-info">
                 <h3>Contact Us</h3>
-                <p><i class='bx bx-phone'></i> +91 98765 43210</p>
-                <p><i class='bx bx-map'></i> Ridex Car Rentals, 221B Green Avenue, Mumbai, India</p>
+                <p><i class='bx bx-phone'></i> +91 9326063940</p>
+                <p><i class='bx bx-map'></i>Jalandhar - Delhi G.T. Road, Phagwara, Punjab (India) - 144411</p>
             </div>
 
             <div class="footer-social">
@@ -315,8 +380,8 @@
                 <div class="social">
                     <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank" title="Facebook"><i
                             class='bx bxl-facebook'></i></a>
-                    <a href="https://twitter.com" target="_blank" title="Twitter"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://www.instagram.com" target="_blank" title="Instagram"><i
+                    <a href="https://x.com/RidexCarRental" target="_blank" title="Twitter"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/ridex.car.rental/" target="_blank" title="Instagram"><i
                             class='bx bxl-instagram'></i></a>
                 </div>
             </div>
