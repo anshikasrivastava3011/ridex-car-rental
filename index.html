@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,95 +14,27 @@
     <link rel="canonical" href="https://ridex-rental-cars.netlify.app/index.html">
     <link rel="icon" type="image/png" href="img/jeep.png">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-34WQGNW0X1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-34WQGNW0X1');
     </script>
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
-
-<div id="chatbot-container">
-    <div id="chat-icon">💬</div>
-
-    <div id="chatbot">
-        <div id="chat-header">
-            <span>Ridex Assistant</span>
-            <button id="close-chat">×</button>
-        </div>
-        <div id="chat-body">
-            <div id="chat-messages"></div>
-            <input type="text" id="chat-input" placeholder="Type your message..." />
-        </div>
-    </div>
-</div>
-
-<script>
-    const chatIcon = document.getElementById("chat-icon");
-    const chatbot = document.getElementById("chatbot");
-    const closeChat = document.getElementById("close-chat");
-    const chatInput = document.getElementById("chat-input");
-    const chatMessages = document.getElementById("chat-messages");
-
-    chatIcon.addEventListener("click", () => {
-        chatbot.style.display = "flex";
-        chatIcon.style.display = "none";
-    });
-
-    closeChat.addEventListener("click", () => {
-        chatbot.style.display = "none";
-        chatIcon.style.display = "flex";
-    });
-
-    const botReply = (message) => {
-        let reply = "";
-        message = message.toLowerCase();
-        if (message.includes("hi") || message.includes("hello"))
-            reply = "Hi there! 👋 How can I assist you with your car rental today?";
-        else if (message.includes("car") || message.includes("available"))
-            reply = "We have several options available — hatchbacks, sedans, and SUVs. 🚗 Check the Services section!";
-        else if (message.includes("price") || message.includes("rate"))
-            reply = "Our rental rates start from ₹1,700/day, depending on the model.";
-        else if (message.includes("contact"))
-            reply = "You can reach us at 📞 +91 98765 43210 or visit our Contact page.";
-        else
-            reply = "Thank you for reaching out! Our team will get back to you soon.";
-
-        const botMsg = document.createElement("div");
-        botMsg.className = "bot-message";
-        botMsg.textContent = reply;
-        chatMessages.appendChild(botMsg);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    };
-
-    chatInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter" && chatInput.value.trim() !== "") {
-            const userMsg = document.createElement("div");
-            userMsg.className = "user-message";
-            userMsg.textContent = chatInput.value;
-            chatMessages.appendChild(userMsg);
-            botReply(chatInput.value);
-            chatInput.value = "";
-        }
-    });
-</script>
-
 <body>
     <header>
         <div class="logo-section">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="img/jeep.png" alt="Ridex Logo">
             </a>
             <p class="tagline">Ride Smarter. Drive Greener.</p>
         </div>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="bx bx-menu" id="menu-icon" aria-label="Open navigation menu"></div>
 
         <ul class="navbar">
             <li><a href="index.html" class="active">Home</a></li>
@@ -125,8 +56,8 @@
             <p>Save money on rental cars by searching for car hire deals on Ridex.<br>
                 Find the right car hire for wherever your trip takes you.</p>
             <div class="app-stores">
-                <img src="img/ios.png" alt="Download on App Store">
-                <img src="img/play.png" alt="Get it on Google Play">
+                <img src="img/ios.png" alt="Download on App Store" loading="lazy">
+                <img src="img/play.png" alt="Get it on Google Play" loading="lazy">
             </div>
         </div>
 
@@ -163,14 +94,12 @@
             <div class="box">
                 <i class='bx bxs-calendar-check'></i>
                 <h2>Pick-Up Date</h2>
-                <p>Indicate the date and time you plan to pick up the car. This helps the rental agency ensure the
-                    availability of the vehicle.</p>
+                <p>Indicate the date and time you plan to pick up the car. This helps the rental agency ensure the availability of the vehicle.</p>
             </div>
             <div class="box">
                 <i class='bx bxs-calendar-star'></i>
                 <h2>Book a car</h2>
-                <p>Provide your complete legal name including your phone number and email address and input your
-                    driver's license number, issue date, and expiration date.</p>
+                <p>Provide your complete legal name including your phone number and email address and input your driver's license number, issue date, and expiration date.</p>
             </div>
         </div>
     </section>
@@ -183,7 +112,7 @@
         <div class="services-container">
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car1.jpeg" alt="Tata Nexon available for rental at Ridex">
+                    <img src="img/car1.jpeg" alt="Tata Nexon available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>TATA Nexon</h3>
                 <h2>₹2,500 <span>/day</span></h2>
@@ -192,7 +121,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car2.jpeg" alt="Maruti Suzuki Baleno available for rental at Ridex">
+                    <img src="img/car2.jpeg" alt="Maruti Suzuki Baleno available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>Maruti Suzuki Baleno</h3>
                 <h2>₹2,600 <span>/day</span></h2>
@@ -201,7 +130,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car3.jpeg" alt="Maruti Suzuki Wagon R available for rental at Ridex">
+                    <img src="img/car3.jpeg" alt="Maruti Suzuki Wagon R available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>Maruti Suzuki Wagon R</h3>
                 <h2>₹1,700 <span>/day</span></h2>
@@ -210,7 +139,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car4.jpeg" alt="TATA Harrier available for rental at Ridex">
+                    <img src="img/car4.jpeg" alt="TATA Harrier available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>TATA Harrier</h3>
                 <h2>₹2,650 <span>/day</span></h2>
@@ -219,7 +148,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car5.jpeg" alt="Hyundai Verna available for rental at Ridex">
+                    <img src="img/car5.jpeg" alt="Hyundai Verna available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>Hyundai Verna</h3>
                 <h2>₹4,999 <span>/day</span></h2>
@@ -228,7 +157,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car6.jpeg" alt="TATA Safari available for rental at Ridex">
+                    <img src="img/car6.jpeg" alt="TATA Safari available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>TATA Safari</h3>
                 <h2>₹3,500 <span>/day</span></h2>
@@ -237,7 +166,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car8.jpeg" alt="Toyota Glanza available for rental at Ridex">
+                    <img src="img/car8.jpeg" alt="Toyota Glanza available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>Toyota Glanza</h3>
                 <h2>₹2,800 <span>/day</span></h2>
@@ -246,7 +175,7 @@
 
             <div class="box">
                 <div class="box-img">
-                    <img src="img/car7.jpeg" alt="Mahindra Scorpio available for rental at Ridex">
+                    <img src="img/car7.jpeg" alt="Mahindra Scorpio available for rental at Ridex" loading="lazy">
                 </div>
                 <h3>Mahindra Scorpio</h3>
                 <h2>₹3,850 <span>/day</span></h2>
@@ -262,17 +191,11 @@
         </div>
         <div class="about-container">
             <div class="about-img">
-                <img src="img/black-gmc-sierra-denali-car.png" alt="">
+                <img src="img/black-gmc-sierra-denali-car.png" alt="Ridex car rental vehicle" loading="lazy">
             </div>
             <div class="about-text">
-                <p>When it comes to leading the car rental segment, it is about the level of excellence you provide and
-                    the other add-ons you give to the customers. As the pioneer in rentals car, Ridex has seen the
-                    industry transform over the decades and has kept abreast of it. We have continued to build on our
-                    strong foundation with innovation and professionalism and have become even more relevant in the car
-                    rental segment.</p>
-                <p>Ridex guarantees the best cab drivers to provide great outstation taxi service. With the help of
-                    Ridex outstation car rental and cab services in India, we strive to make each and every trip with
-                    you a memorable one.</p>
+                <p>When it comes to leading the car rental segment, it is about the level of excellence you provide and the other add-ons you give to the customers. As the pioneer in rentals car, Ridex has seen the industry transform over the decades and has kept abreast of it. We have continued to build on our strong foundation with innovation and professionalism and have become even more relevant in the car rental segment.</p>
+                <p>Ridex guarantees the best cab drivers to provide great outstation taxi service. With the help of Ridex outstation car rental and cab services in India, we strive to make each and every trip with you a memorable one.</p>
                 <a href="contact.html" class="btn">Learn More</a>
             </div>
         </div>
@@ -287,7 +210,7 @@
         <div class="reviews-container">
             <div class="review-box">
                 <div class="review-top">
-                    <img src="img/rev1.jpg" alt="Karan Singh">
+                    <img src="img/rev1.jpg" alt="Karan Singh" loading="lazy">
                     <div class="review-info">
                         <h2>Karan Singh</h2>
                         <div class="stars">
@@ -299,13 +222,12 @@
                         </div>
                     </div>
                 </div>
-                <p>"Flattered with the availability of well-maintained cars. The service was quick and the booking
-                    process was smooth!"</p>
+                <p>"Flattered with the availability of well-maintained cars. The service was quick and the booking process was smooth!"</p>
             </div>
 
             <div class="review-box">
                 <div class="review-top">
-                    <img src="img/rev2.jpg" alt="Ravindra Tripathi">
+                    <img src="img/rev2.jpg" alt="Ravindra Tripathi" loading="lazy">
                     <div class="review-info">
                         <h2>Ravindra Tripathi</h2>
                         <div class="stars">
@@ -317,13 +239,12 @@
                         </div>
                     </div>
                 </div>
-                <p>"Booked a XUV with unlimited kms — very happy with Ridex’s service. Great experience and value for
-                    money."</p>
+                <p>"Booked a XUV with unlimited kms — very happy with Ridex’s service. Great experience and value for money."</p>
             </div>
 
             <div class="review-box">
                 <div class="review-top">
-                    <img src="img/rev3.jpg" alt="Jiya Datta">
+                    <img src="img/rev3.jpg" alt="Jiya Datta" loading="lazy">
                     <div class="review-info">
                         <h2>Jiya Datta</h2>
                         <div class="stars">
@@ -335,13 +256,12 @@
                         </div>
                     </div>
                 </div>
-                <p>"Booked a car for a family trip — it was clean, comfortable, and in excellent condition. Highly
-                    recommend Ridex!"</p>
+                <p>"Booked a car for a family trip — it was clean, comfortable, and in excellent condition. Highly recommend Ridex!"</p>
             </div>
 
             <div class="review-box">
                 <div class="review-top">
-                    <img src="img/rev4.jpg" alt="Amit Patel">
+                    <img src="img/rev4.jpg" alt="Amit Patel" loading="lazy">
                     <div class="review-info">
                         <h2>Amit Patel</h2>
                         <div class="stars">
@@ -357,7 +277,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="newsletter">
         <h2>Subscribe To Newsletter</h2>
@@ -378,11 +297,9 @@
             <div class="footer-social">
                 <h3>Follow Us</h3>
                 <div class="social">
-                    <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank" title="Facebook"><i
-                            class='bx bxl-facebook'></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank" title="Facebook"><i class='bx bxl-facebook'></i></a>
                     <a href="https://x.com/RidexCarRental" target="_blank" title="Twitter"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://www.instagram.com/ridex.car.rental/" target="_blank" title="Instagram"><i
-                            class='bx bxl-instagram'></i></a>
+                    <a href="https://www.instagram.com/ridex.car.rental/" target="_blank" title="Instagram"><i class='bx bxl-instagram'></i></a>
                 </div>
             </div>
         </div>
@@ -392,9 +309,70 @@
         </div>
     </footer>
 
+    <div id="chatbot-container">
+        <div id="chat-icon">💬</div>
+        <div id="chatbot">
+            <div id="chat-header">
+                <span>Ridex Assistant</span>
+                <button id="close-chat" type="button">×</button>
+            </div>
+            <div id="chat-body">
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Type your message..." />
+            </div>
+        </div>
+    </div>
 
+    <script>
+        const chatIcon = document.getElementById("chat-icon");
+        const chatbot = document.getElementById("chatbot");
+        const closeChat = document.getElementById("close-chat");
+        const chatInput = document.getElementById("chat-input");
+        const chatMessages = document.getElementById("chat-messages");
+
+        chatIcon.addEventListener("click", () => {
+            chatbot.style.display = "flex";
+            chatIcon.style.display = "none";
+        });
+
+        closeChat.addEventListener("click", () => {
+            chatbot.style.display = "none";
+            chatIcon.style.display = "flex";
+        });
+
+        const botReply = (message) => {
+            let reply = "";
+            message = message.toLowerCase();
+            if (message.includes("hi") || message.includes("hello"))
+                reply = "Hi there! 👋 How can I assist you with your car rental today?";
+            else if (message.includes("car") || message.includes("available"))
+                reply = "We have several options available — hatchbacks, sedans, and SUVs. 🚗 Check the Services section!";
+            else if (message.includes("price") || message.includes("rate"))
+                reply = "Our rental rates start from ₹1,700/day, depending on the model.";
+            else if (message.includes("contact"))
+                reply = "You can reach us at 📞 +91 98765 43210 or visit our Contact page.";
+            else
+                reply = "Thank you for reaching out! Our team will get back to you soon.";
+
+            const botMsg = document.createElement("div");
+            botMsg.className = "bot-message";
+            botMsg.textContent = reply;
+            chatMessages.appendChild(botMsg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        };
+
+        chatInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter" && chatInput.value.trim() !== "") {
+                const userMsg = document.createElement("div");
+                userMsg.className = "user-message";
+                userMsg.textContent = chatInput.value;
+                chatMessages.appendChild(userMsg);
+                botReply(chatInput.value);
+                chatInput.value = "";
+            }
+        });
+    </script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
 </body>
-
 </html>

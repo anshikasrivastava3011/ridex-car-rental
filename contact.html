@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,103 +14,31 @@
   <link rel="canonical" href="https://ridex-rental-cars.netlify.app/contact.html">
   <link rel="icon" type="image/png" href="img/jeep.png">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-34WQGNW0X1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-34WQGNW0X1');
   </script>
 
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
-
-<!-- Modern Ridex Chatbot -->
-<div id="chatbot-container">
-  <div id="chat-icon">💬</div>
-
-  <div id="chatbot">
-    <div id="chat-header">
-      <span>Ridex Assistant</span>
-      <button id="close-chat">×</button>
-    </div>
-    <div id="chat-body">
-      <div id="chat-messages"></div>
-      <input type="text" id="chat-input" placeholder="Type your message..." />
-    </div>
-  </div>
-</div>
-
-<script>
-  const chatIcon = document.getElementById("chat-icon");
-  const chatbot = document.getElementById("chatbot");
-  const closeChat = document.getElementById("close-chat");
-  const chatInput = document.getElementById("chat-input");
-  const chatMessages = document.getElementById("chat-messages");
-
-  // Toggle chat visibility
-  chatIcon.addEventListener("click", () => {
-    chatbot.style.display = "flex";
-    chatIcon.style.display = "none";
-  });
-
-  closeChat.addEventListener("click", () => {
-    chatbot.style.display = "none";
-    chatIcon.style.display = "flex";
-  });
-
-  // Chatbot logic
-  const botReply = (message) => {
-    let reply = "";
-    message = message.toLowerCase();
-    if (message.includes("hi") || message.includes("hello"))
-      reply = "Hi there! 👋 How can I assist you with your car rental today?";
-    else if (message.includes("car") || message.includes("available"))
-      reply = "We have several options available — hatchbacks, sedans, and SUVs. 🚗 Check the Services section!";
-    else if (message.includes("price") || message.includes("rate"))
-      reply = "Our rental rates start from ₹1,700/day, depending on the model.";
-    else if (message.includes("contact"))
-      reply = "You can reach us at 📞 +91 98765 43210 or visit our Contact page.";
-    else
-      reply = "Thank you for reaching out! Our team will get back to you soon.";
-
-    const botMsg = document.createElement("div");
-    botMsg.className = "bot-message";
-    botMsg.textContent = reply;
-    chatMessages.appendChild(botMsg);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  };
-
-  chatInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter" && chatInput.value.trim() !== "") {
-      const userMsg = document.createElement("div");
-      userMsg.className = "user-message";
-      userMsg.textContent = chatInput.value;
-      chatMessages.appendChild(userMsg);
-      botReply(chatInput.value);
-      chatInput.value = "";
-    }
-  });
-</script>
-
 <body>
-
   <header>
     <div class="logo-section">
       <a href="index.html" class="logo"><img src="img/jeep.png" alt="Ridex Logo"></a>
       <p class="tagline">Ride Smarter. Drive Greener.</p>
     </div>
 
-    <div class="bx bx-menu" id="menu-icon"></div>
+    <div class="bx bx-menu" id="menu-icon" aria-label="Open navigation menu"></div>
 
     <ul class="navbar">
       <li><a href="index.html">Home</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
       <li><a href="index.html#reviews">Reviews</a></li>
     </ul>
 
@@ -120,7 +47,6 @@
       <a href="#" class="sign-in">Sign In</a>
     </div>
   </header>
-
 
   <section class="contact" id="contact">
     <div class="heading">
@@ -138,8 +64,7 @@
 
         <h3>Connect with Us</h3>
         <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank" class="facebook"><i
-              class='bx bxl-facebook'></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank" class="facebook"><i class='bx bxl-facebook'></i></a>
           <a href="https://x.com/RidexCarRental" target="_blank" class="twitter"><i class='bx bxl-twitter'></i></a>
           <a href="https://www.instagram.com/ridex.car.rental/" target="_blank" class="instagram"><i class='bx bxl-instagram'></i></a>
         </div>
@@ -163,21 +88,82 @@
     <div class="coypright">
       <p>&#169; Ridex All Right Reserved</p>
       <div class="social">
-        <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank"><i
-            class='bx bxl-facebook'></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61583391901734" target="_blank"><i class='bx bxl-facebook'></i></a>
         <a href="https://x.com/RidexCarRental" target="_blank"><i class='bx bxl-twitter'></i></a>
         <a href="https://www.instagram.com/ridex.car.rental/" target="_blank"><i class='bx bxl-instagram'></i></a>
       </div>
     </div>
   </footer>
 
+  <div id="chatbot-container">
+    <div id="chat-icon">💬</div>
+    <div id="chatbot">
+      <div id="chat-header">
+        <span>Ridex Assistant</span>
+        <button id="close-chat" type="button">×</button>
+      </div>
+      <div id="chat-body">
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Type your message..." />
+      </div>
+    </div>
+  </div>
+
   <script>
+    const chatIcon = document.getElementById("chat-icon");
+    const chatbot = document.getElementById("chatbot");
+    const closeChat = document.getElementById("close-chat");
+    const chatInput = document.getElementById("chat-input");
+    const chatMessages = document.getElementById("chat-messages");
+
+    chatIcon.addEventListener("click", () => {
+      chatbot.style.display = "flex";
+      chatIcon.style.display = "none";
+    });
+
+    closeChat.addEventListener("click", () => {
+      chatbot.style.display = "none";
+      chatIcon.style.display = "flex";
+    });
+
+    const botReply = (message) => {
+      let reply = "";
+      message = message.toLowerCase();
+      if (message.includes("hi") || message.includes("hello"))
+        reply = "Hi there! 👋 How can I assist you with your car rental today?";
+      else if (message.includes("car") || message.includes("available"))
+        reply = "We have several options available — hatchbacks, sedans, and SUVs. 🚗 Check the Services section!";
+      else if (message.includes("price") || message.includes("rate"))
+        reply = "Our rental rates start from ₹1,700/day, depending on the model.";
+      else if (message.includes("contact"))
+        reply = "You can reach us at 📞 +91 98765 43210 or visit our Contact page.";
+      else
+        reply = "Thank you for reaching out! Our team will get back to you soon.";
+
+      const botMsg = document.createElement("div");
+      botMsg.className = "bot-message";
+      botMsg.textContent = reply;
+      chatMessages.appendChild(botMsg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" && chatInput.value.trim() !== "") {
+        const userMsg = document.createElement("div");
+        userMsg.className = "user-message";
+        userMsg.textContent = chatInput.value;
+        chatMessages.appendChild(userMsg);
+        botReply(chatInput.value);
+        chatInput.value = "";
+      }
+    });
+
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
       alert('Thank you for contacting us! We’ll get back to you soon.');
       this.reset();
     });
   </script>
+  <script src="main.js"></script>
 </body>
-
 </html>
