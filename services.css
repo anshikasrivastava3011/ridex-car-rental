@@ -16,19 +16,9 @@
     --gradient: linear-gradient(#66CDAA,#3cb371);
 
 }
-html::webkit-scrollbar{
-    width: 0.5rem;
-
-}
-html::webkit-scrollbar-track{
-    background: transparent;
-    
-}
-html::webkit-scrollbar-thumb{
-    background: var(--main-color);
-    border-radius: 5rem;
-    
-}
+html::-webkit-scrollbar { width: 0.5rem; }
+html::-webkit-scrollbar-track { background: transparent; }
+html::-webkit-scrollbar-thumb { background: var(--main-color); border-radius: 5rem; }
 section{
     padding: 50px 100px;
 }
@@ -91,6 +81,9 @@ header{
 .header-btn .sign-in:hover{
     background: var(--main-color);
 }
+/* account for fixed header on dedicated services page */
+.services { padding-top: 120px; }
+
 .services-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,auto));
@@ -98,9 +91,12 @@ header{
     margin-top: 2rem;
 }
 .services-container .box{
-    padding: 10px;
+    padding: 14px;
     border-radius: 1rem;
-    box-shadow: 1px 4px 411px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    background: #fff;
 }
 .services-container .box .box-img{
     width: 100%;
@@ -113,15 +109,10 @@ header{
     object-fit: cover;
     object-position: center;
 }
-.services-container .box p{
-    padding: 0 10px;
-    border: 1px solid var(--text-color);
-    width: 58px;
-    border-radius: 0.5rem;
-    margin: 1rem 0 1rem;
-}
 .services-container .box h3{
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0.75rem 0 0.3rem;
 }
 .services-container .box h2{
     font-size: 1.1rem;
@@ -462,3 +453,70 @@ footer .social a:hover {
     height: 200px;
   }
 }
+
+/* ===== SHARED COMPONENTS (WhatsApp, Breadcrumb, car-desc) ===== */
+.whatsapp-float {
+    position: fixed; bottom: 25px; left: 25px; z-index: 9999;
+    background: #25D366; color: #fff; width: 55px; height: 55px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+    transition: transform 0.2s ease, background 0.3s ease; text-decoration: none;
+}
+.whatsapp-float:hover { transform: scale(1.12); background: #1ebe5d; }
+
+.breadcrumb {
+    padding: 8px 100px; background: #f5f5f5;
+    border-bottom: 1px solid #e8e8e8; margin-top: 70px;
+    font-size: 0.85rem; color: #888;
+}
+.breadcrumb a { color: var(--second-color); }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 6px; color: #bbb; }
+
+.services-container .box .car-desc {
+    font-size: 0.82rem;
+    color: #666;
+    line-height: 1.5;
+    width: 100%;
+    margin: 0.2rem 0 0.5rem;
+    flex-grow: 1;
+}
+.services-container .box .price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--main-color);
+    width: 100%;
+    margin: 0.4rem 0 0.6rem;
+}
+.services-container .box .price span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.services-container .box .btn {
+    margin-top: auto;
+}
+.services-container .box { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.services-container .box:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(102,205,170,0.25); }
+
+.faq { background: linear-gradient(180deg,#f9f9f9 0%,#eefaf7 100%); padding: 60px 100px; border-radius:12px; }
+.faq .heading { margin-bottom: 40px; }
+.faq .heading span { color: var(--second-color); font-weight:600; text-transform:uppercase; letter-spacing:1px; }
+.faq .heading h2 { font-size:1.8rem; color:#222; margin-top:10px; }
+.faq-container { max-width:800px; margin:0 auto; }
+.faq-item { background:#fff; border-radius:1rem; margin-bottom:12px; box-shadow:0 4px 15px rgba(0,0,0,0.06); overflow:hidden; transition:box-shadow 0.3s ease; }
+.faq-item:hover { box-shadow:0 6px 20px rgba(102,205,170,0.2); }
+.faq-question { width:100%; display:flex; justify-content:space-between; align-items:center; padding:20px 25px; background:none; border:none; cursor:pointer; font-family:'Poppins',sans-serif; font-size:1rem; font-weight:500; color:#222; text-align:left; transition:color 0.3s ease; }
+.faq-question:hover { color:var(--second-color); }
+.faq-question i { font-size:1.5rem; color:var(--main-color); transition:transform 0.3s ease; flex-shrink:0; margin-left:15px; }
+.faq-item.active .faq-question i { transform:rotate(180deg); }
+.faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease,padding 0.3s ease; padding:0 25px; }
+.faq-item.active .faq-answer { max-height:300px; padding:0 25px 20px; }
+.faq-answer p { font-size:0.95rem; color:#555; line-height:1.7; }
+
+@media (max-width: 768px) {
+    .breadcrumb { padding: 8px 20px; margin-top: 60px; }
+    .faq { padding: 40px 20px; }
+    .whatsapp-float { left: 15px; bottom: 15px; width: 50px; height: 50px; font-size: 24px; }
+}
+@media (max-width: 480px) { .breadcrumb { padding: 8px 16px; } }

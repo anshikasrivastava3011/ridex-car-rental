@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage — highest priority -->
   <url>
     <loc>https://ridex-rental-cars.netlify.app/</loc>
     <lastmod>2026-05-19</lastmod>
@@ -9,6 +12,7 @@
     <priority>1.00</priority>
   </url>
 
+  <!-- Services / Fleet — high commercial intent -->
   <url>
     <loc>https://ridex-rental-cars.netlify.app/services.html</loc>
     <lastmod>2026-05-19</lastmod>
@@ -16,17 +20,20 @@
     <priority>0.90</priority>
   </url>
 
-  <url>
-    <loc>https://ridex-rental-cars.netlify.app/about.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
+  <!-- Contact / Booking — conversion page -->
   <url>
     <loc>https://ridex-rental-cars.netlify.app/contact.html</loc>
     <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
   </url>
+
+  <!-- About — trust & brand page -->
+  <url>
+    <loc>https://ridex-rental-cars.netlify.app/about.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
 </urlset>
