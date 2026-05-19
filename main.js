@@ -59,4 +59,34 @@ if (typeof ScrollReveal !== "undefined") {
         origin: "bottom",
         delay: 100
     });
+
+    sr.reveal(".faq-item", {
+        origin: "bottom",
+        interval: 100
+    });
+
+    sr.reveal(".why-box", {
+        origin: "bottom",
+        interval: 100
+    });
 }
+
+// ================= FAQ ACCORDION =================
+document.querySelectorAll(".faq-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains("active");
+
+        // Close all other FAQ items
+        document.querySelectorAll(".faq-item").forEach((faq) => {
+            faq.classList.remove("active");
+            faq.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        });
+
+        // Toggle current item
+        if (!isActive) {
+            item.classList.add("active");
+            btn.setAttribute("aria-expanded", "true");
+        }
+    });
+});
