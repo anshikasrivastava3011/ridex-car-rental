@@ -82,7 +82,7 @@ header{
     background: var(--main-color);
 }
 /* account for fixed header on dedicated services page */
-.services { padding-top: 120px; }
+.services { padding-top: 20px; }
 
 .services-container{
     display: grid;
